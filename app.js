@@ -10,3 +10,40 @@ port:process.env.PORT || 3000
     await app.start();
     console.log('bolt app is running')
 })();
+app.shortcut('Who_am_i',async({
+    shortcut,ack,client
+}) =>{
+    try{
+        //Acknowledge shrtcut request
+await ack();
+const result = await client.views.open({
+ trigger_id:shortcut.trigger_id,
+ view:{
+     type:"modal",
+   title:{
+       type:"plain_text",
+       text:"My app",
+   },
+   close:{
+    type:"plain_text",
+    text:"close",
+},
+blocks:[{
+    type:"section",
+    text:{
+        type:"mrkdwn",
+        text:"Hello!", 
+    }
+}]
+ }   
+})
+console.log(result)
+    }
+
+catch(error)
+{
+console.log(error)
+}
+
+
+})
