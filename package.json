@@ -1,0 +1,14 @@
+{
+  "name": "my-slack-salesforce-app",
+  "version": "1.0.0",
+  "description": "Integrate with slack to salesforce",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vijay",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.11.1"
+  }
+}
