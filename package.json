@@ -4,11 +4,20 @@
   "description": "Integrate with slack to salesforce",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node app.js"
   },
   "author": "Vijay",
   "license": "ISC",
   "dependencies": {
-    "@slack/bolt": "^3.11.1"
-  }
+    "@slack/bolt": "^3.11.1",
+    "dotenv": "^16.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vijayhakyale/my-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vijayhakyale/my-project/issues"
+  },
+  "homepage": "https://github.com/Vijayhakyale/my-project#readme"
 }

@@ -1,6 +1,6 @@
-const { App, ExpressReceiver, LogLevel } = require('@slack/bolt');
+const { App} = require('@slack/bolt');
 
-const app = App({
+const app = new App({
 token:process.env.SLACK_BOT_TOKEN,
 signingSecrete :process.env.SLACK_SIGNING_SECRET,
 port:process.env.PORT || 3000
@@ -46,4 +46,4 @@ console.log(error)
 }
 
 
-})
+});
