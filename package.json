@@ -4,7 +4,7 @@
   "description": "Integrate with slack to salesforce",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "node app.js"
   },
   "author": "Vijay",
   "license": "ISC",
