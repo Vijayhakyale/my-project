@@ -1,6 +1,6 @@
 
-const SLACK_SIGNING_SECRET = '9ac775b58e73483dfedd6cc17ab9af09';
-const SLACK_BOT_TOKEN = 'xoxb-2343587270560-3658335849427-pexNm0a47RkkDkBpZCxiVAWn';
+// const SLACK_SIGNING_SECRET = '9ac775b58e73483dfedd6cc17ab9af09';
+// const SLACK_BOT_TOKEN = 'xoxb-2343587270560-3658335849427-pexNm0a47RkkDkBpZCxiVAWn';
 const { App } = require('@slack/bolt');
 //const request = require('request');
 
@@ -24,9 +24,9 @@ const { App } = require('@slack/bolt');
 // });
 
 const app = new App({
-    token:SLACK_BOT_TOKEN,
-    signingSecret:SLACK_SIGNING_SECRET,
-   //port:process.env.PORT || 3000
+    token:process.env.SLACK_BOT_TOKEN,
+    signingSecret:process.env.SLACK_SIGNING_SECRET,
+   port:process.env.PORT || 3000
 });
 (async () => {
     //START YOUR APP
