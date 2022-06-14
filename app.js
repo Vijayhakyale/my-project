@@ -1,31 +1,32 @@
 
-const SLACK_SIGNING_SECRET = 'bf687f6c049a0a4d594a2a15c99efc0b';
+const SLACK_SIGNING_SECRET = '9ac775b58e73483dfedd6cc17ab9af09';
 const SLACK_BOT_TOKEN = 'xoxb-2343587270560-3658335849427-pexNm0a47RkkDkBpZCxiVAWn';
 const { App } = require('@slack/bolt');
-const request = require('request');
+//const request = require('request');
 
-const options = {
-    url: 'https://raagvitech127-dev-ed.lightning.force.com/services/data/v48.0/sobjects/Case',
-    json: true,
-    body: {
-        Subject: 'Hello world',
-        Description: 'Lorem ipsum dolor sit amet...',
-        Origin: 'Web',
-        AccountId: '0015g00000HvK07AAF'
-    }
-};
+// const options = {
+//     url: 'https://raagvitech127-dev-ed.lightning.force.com/services/data/v48.0/sobjects/Case',
+//     json: true,
+//     body: {
+//         Subject: 'Hello world',
+//         Description: 'Lorem ipsum dolor sit amet...',
+//         Origin: 'Web',
+//         AccountId: '0015g00000HvK07AAF'
+//     }
+// };
 
-request.post(options, (err, res, body) => {
-    if (err) {
-        return console.log(err);
-    }
-    console.log(`Status: ${res.statusCode}`);
-    console.log(body);
-});
+// request.post(options, (err, res, body) => {
+//     if (err) {
+//         return console.log(err);
+//     }
+//     console.log(`Status: ${res.statusCode}`);
+//     console.log(body);
+// });
+
 const app = new App({
     token:SLACK_BOT_TOKEN,
     signingSecret:SLACK_SIGNING_SECRET,
-   port:process.env.PORT || 3000
+   //port:process.env.PORT || 3000
 });
 (async () => {
     //START YOUR APP
@@ -37,7 +38,7 @@ app.message('Good Morning', async ({ message, say }) => {
     // Start your app
 
     await say(`Hey <@${message.user}>!  Good Morning`)
-     await app.start(process.env.PORT || 3000);
+    // await app.start(process.env.PORT || 3000);
 
     console.log('<@${message.user}> ', message.user);
 })
